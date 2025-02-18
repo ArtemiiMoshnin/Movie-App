@@ -5,6 +5,7 @@ import { GenresConsumer } from '../services/service-genresContext';
 import './movie.css';
 import { Progress } from 'antd';
 import PropTypes from 'prop-types';
+import placeholderImage from '../img/images.png';
 
 export default class Movie extends Component {
   formatDate = () => {
@@ -42,7 +43,10 @@ export default class Movie extends Component {
     return (
       <li className="movie">
         <div className="img-container">
-          <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} />
+          <img
+            src={movie.poster_path ? `https://image.tmdb.org/t/p/w200${movie.poster_path}` : placeholderImage}
+            alt={movie.title}
+          />
         </div>
 
         <div className="movie-overview">

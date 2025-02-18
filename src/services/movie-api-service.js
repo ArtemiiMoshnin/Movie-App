@@ -1,6 +1,6 @@
 export default class MovieApi {
   baseUrl = 'https://api.themoviedb.org/3/search/movie';
-  apiKey = '9dba2b36ccc415bd7afa35b8652889e4';
+  apiKey = import.meta.env.VITE_API_KEY;
 
   async getResource(query, page) {
     const res = await fetch(
